@@ -2,3 +2,4 @@
 *.db
 requirements.txt
 .venv
+.DS_Store
