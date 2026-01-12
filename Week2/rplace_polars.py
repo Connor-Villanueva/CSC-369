@@ -6,7 +6,8 @@ from helper import timer_dec
 PARQUET_FILE_PATH = "../2022_place_canvas_history.parquet"
 
 @timer_dec
-def getResults(df : pl.DataFrame, start_time, end_time):
+def getResults(start_time, end_time):
+    df = pl.read_parquet(PARQUET_FILE_PATH)
     color = df.filter(
     pl.col("timestamp").is_between(start_time, end_time)
     ).group_by("pixel_color").len().sort(by="len", descending=True).limit(5)
@@ -43,9 +44,9 @@ def main():
         print("Ending date must be after the starting date.")
         sys.exit(1)
 
-    df = pl.read_parquet(PARQUET_FILE_PATH)
+    
     print("\nTimeframe:", start_time, "to", end_time)
-    getResults(df, start_time, end_time)
+    getResults(start_time, end_time)
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,4 @@
-import duckdb
+import pandas as pd
 from datetime import datetime
 import sys
 from helper import timer_dec
@@ -7,47 +7,18 @@ PARQUET_FILE_PATH = "../2022_place_canvas_history.parquet"
 
 @timer_dec
 def getResults(start_time, end_time):
-    ## Most Frequent Color
-    query = f"""
-        SELECT 
-            pixel_color,
-            COUNT(*) AS frequency
-        FROM
-            '{PARQUET_FILE_PATH}'
-        WHERE
-            timestamp >= '{start_time}' AND
-            timestamp <= '{end_time}'
-        GROUP BY
-            pixel_color
-        ORDER BY
-            frequency DESC
-        LIMIT 5
-    """
-
-    color = duckdb.query(query).fetchone()
-
-    ## Most Frequent Coordinate
-    query = f"""
-        SELECT
-            coordinate,
-            COUNT(*) AS frequency
-        FROM
-            '{PARQUET_FILE_PATH}'
-        WHERE
-            timestamp >= '{start_time}' AND
-            timestamp <= '{end_time}'
-        GROUP BY
-            coordinate
-        ORDER BY
-            frequency DESC
-        LIMIT 5
-    """
-
-    coord = duckdb.query(query).fetchone()
-
+    df = pd.read_parquet(PARQUET_FILE_PATH)
+    color = (
+            df[(df["timestamp"] >= start_time) & (df["timestamp"] <= end_time)]
+            ).groupby("pixel_color").count().sort_values(by="timestamp", ascending=False)
+    
+    coord = (
+            df[(df["timestamp"] >= start_time) & (df["timestamp"] <= end_time)]
+            ).groupby("coordinate").count().sort_values(by="timestamp", ascending=False)
+    
     print("\n-=-=-=-=-=-=-=-\n")
-    print("Most Placed Color:", color)
-    print(f"Most Placed Pixel Location: ({coord})")
+    print("Most Placed Color:", color.iloc[0].name)
+    print(f"Most Placed Pixel Location: ({coord.iloc[0].name})")
     print("\n-=-=-=-=-=-=-=-\n")
 
 def printUsage():
@@ -73,6 +44,7 @@ def main():
         print("Ending date must be after the starting date.")
         sys.exit(1)
 
+    
     print("\nTimeframe:", start_time, "to", end_time)
     getResults(start_time, end_time)
 
