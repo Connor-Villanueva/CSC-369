@@ -116,8 +116,8 @@ def getResults(conn : sqlite3.Connection, start_time, end_time):
     coord = conn.execute(query).fetchone()
 
     print("\n-=-=-=-=-=-=-=-\n")
-    print("Most Placed Color:", color[0])
-    print(f"Most Placed Pixel Location: ({coord[0]})")
+    print("Most Placed Color:", color)
+    print(f"Most Placed Pixel Location: ({coord})")
     print("\n-=-=-=-=-=-=-=-\n")
 
 def printUsage():
