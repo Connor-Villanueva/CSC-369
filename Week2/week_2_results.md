@@ -14,8 +14,8 @@ The preprocessing that was performed was migrating the data from a `csv` file to
 
 # Reflection
 
-Overall, we see that DuckDB and Polars perform significantly better than my SQLite appraoch from week 1. Had I taken the more traditional approach in week 1, we would have seen the improvement with pandas as well.
+Overall, we see that DuckDB and Polars perform significantly better than my SQLite appraoch from week 1. Had I taken the more traditional approach in week 1, we would have seen the improvement with Pandas as well.
 
-Personally, the easiest script to write was `rplace_duckdb.py` because of my familarity with duckdb from CSC 466, and SQL. This also ran the fastest, compared to the other two.z
+Personally, the easiest script to write, and my favorite, was `rplace_duckdb.py` because of my familarity with DuckDB from CSC 466, and SQL. This also ran the fastest, compared to the other two.
 
-Though that's not to say that polars and pandas were very difficult either. 
+Though that's not to say that Polars and Pandas were very difficult either. I got some experience with these in CSC 466, but mainly had to lookup some syntax. Polars and Pandas are also similar enough that it was easy to translate from one to the other.
