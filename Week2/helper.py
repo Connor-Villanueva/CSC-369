@@ -2,7 +2,7 @@ import polars as pl
 import time
 
 CSV_FILE_PATH = "../2022_place_canvas_history.csv"
-PARQUET_FILE_PATH = "../2022_place_canvas_history.parquet"
+PARQUET_FILE_PATH = "../2022_place_canvas_history_uid.parquet"
 
 def _create_parquet():
     df = pl.scan_csv(CSV_FILE_PATH).with_columns(
@@ -16,7 +16,15 @@ def _create_parquet():
         )
         .dt.replace_time_zone(None)
         .alias("timestamp")
-    ).drop("user_id")
+    )
+
+    df = df.with_columns(
+        pl.col("user_id")
+            .rank(method="dense")
+            .cast(pl.Int32)
+            .sub(1)
+            .alias("user_id")
+    )
 
     df.sink_parquet(PARQUET_FILE_PATH)
 
