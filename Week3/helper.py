@@ -1,8 +1,8 @@
 import polars as pl
 import time
 
-CSV_FILE_PATH = "2022_place_canvas_history.csv"
-PARQUET_FILE_PATH = "2022_place_canvas_history_uid.parquet"
+CSV_FILE_PATH = "../2022_place_canvas_history.csv"
+PARQUET_FILE_PATH = "../2022_place_canvas_history_uid.parquet"
 
 def _create_parquet():
     df = pl.scan_csv(CSV_FILE_PATH).with_columns(

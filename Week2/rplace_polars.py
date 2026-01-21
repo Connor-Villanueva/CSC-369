@@ -17,8 +17,8 @@ def getResults(start_time, end_time):
         ).group_by("coordinate").len().sort(by="len", descending=True).limit(5)
 
     print("\n-=-=-=-=-=-=-=-\n")
-    print("Most Placed Color:", color[0])
-    print(f"Most Placed Pixel Location: ({coord[0]})")
+    print("Most Placed Color:", color[0].get_column("pixel_color")[0])
+    print(f"Most Placed Pixel Location: ({coord[0].get_column("coordinate")[0]})")
     print("\n-=-=-=-=-=-=-=-\n")
 
 def printUsage():

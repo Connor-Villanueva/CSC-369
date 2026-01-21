@@ -5,7 +5,7 @@ import csv
 from datetime import datetime
 
 CSV_FILE = "../2022_place_canvas_history.csv"
-DB_FILE = "./2022_place_canvas.db"
+DB_FILE = "../2022_place_canvas.db"
 TABLE_NAME = "canvas_history"
 
 def createDB():
