@@ -6,25 +6,36 @@ PARQUET_FILE_PATH = "../2022_place_canvas_history_uid.parquet"
 
 def _create_parquet():
     df = pl.scan_csv(CSV_FILE_PATH).with_columns(
-        pl.coalesce(
-            pl.col("timestamp").str.strptime(
-                pl.Datetime, "%Y-%m-%d %H:%M:%S.%f %Z", strict=False
-            ),
-            pl.col("timestamp").str.strptime(
-                pl.Datetime, "%Y-%m-%d %H:%M:%S %Z", strict=False
+        (
+            pl.coalesce(
+                pl.col("timestamp").str.strptime(
+                    pl.Datetime, "%Y-%m-%d %H:%M:%S.%f %Z", strict=False
+                ),
+                pl.col("timestamp").str.strptime(
+                    pl.Datetime, "%Y-%m-%d %H:%M:%S %Z", strict=False
+                )
             )
+            .dt.replace_time_zone(None)
+            .alias("timestamp")
+        ),
+        (
+            pl.col("user_id")
+                .rank(method="dense")
+                .cast(pl.Int32)
+                .sub(1)
+                .alias("user_id")
         )
-        .dt.replace_time_zone(None)
-        .alias("timestamp")
     )
 
-    # df = df.with_columns(
-    #     pl.col("user_id")
-    #         .rank(method="dense")
-    #         .cast(pl.Int32)
-    #         .sub(1)
-    #         .alias("user_id")
-    # )
+    df = df.with_columns(
+        pl.col("user_id")
+            .rank(method="dense")
+            .cast(pl.Int32)
+            .sub(1)
+            .alias("user_id")
+    )
+
+    df = df.with_columns()
 
     df.sink_parquet(PARQUET_FILE_PATH)
 
