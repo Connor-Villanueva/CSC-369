@@ -15,13 +15,13 @@ def _create_parquet():
             .dt.replace_time_zone(None)
             .alias("timestamp")
         ),
-        # (
-        #     pl.col("user_id")
-        #         .rank(method="dense")
-        #         .cast(pl.Int32)
-        #         .sub(1)
-        #         .alias("user_id")
-        # )
+        (
+            pl.col("user_id")
+                .rank(method="dense")
+                .cast(pl.Int32)
+                .sub(1)
+                .alias("user_id")
+        )
     )
 
     df = df.with_columns()
