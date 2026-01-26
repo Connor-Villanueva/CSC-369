@@ -7,18 +7,22 @@ PARQUET_FILE_PATH = "../2022_place_canvas_history.parquet"
 
 @timer_dec
 def getResults(start_time, end_time):
-    df = pl.read_parquet(PARQUET_FILE_PATH)
+    df = pl.scan_parquet(PARQUET_FILE_PATH)
     color = df.filter(
     pl.col("timestamp").is_between(start_time, end_time)
-    ).group_by("pixel_color").len().sort(by="len", descending=True).limit(5)
+    ).group_by("pixel_color").len().sort(by="len", descending=True).limit(1)
+
+    color = color.collect(streaming=True)
 
     coord = df.filter(
         pl.col("timestamp").is_between(start_time, end_time)
-        ).group_by("coordinate").len().sort(by="len", descending=True).limit(5)
+        ).group_by("coordinate").len().sort(by="len", descending=True).limit(1)
+    coord = coord.collect(streaming=True)
+    
 
     print("\n-=-=-=-=-=-=-=-\n")
-    print("Most Placed Color:", color[0].get_column("pixel_color")[0])
-    print(f"Most Placed Pixel Location: ({coord[0].get_column("coordinate")[0]})")
+    print("Most Placed Color:", color.get_column("pixel_color")[0])
+    print(f"Most Placed Pixel Location: ({coord.get_column("coordinate")[0]})")
     print("\n-=-=-=-=-=-=-=-\n")
 
 def printUsage():

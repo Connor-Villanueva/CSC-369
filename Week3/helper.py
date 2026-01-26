@@ -9,30 +9,19 @@ def _create_parquet():
         (
             pl.coalesce(
                 pl.col("timestamp").str.strptime(
-                    pl.Datetime, "%Y-%m-%d %H:%M:%S.%f %Z", strict=False
-                ),
-                pl.col("timestamp").str.strptime(
-                    pl.Datetime, "%Y-%m-%d %H:%M:%S %Z", strict=False
+                    pl.Datetime, "%Y-%m-%d %H:%M:%S%.f %Z", strict=False
                 )
             )
             .dt.replace_time_zone(None)
             .alias("timestamp")
         ),
-        (
-            pl.col("user_id")
-                .rank(method="dense")
-                .cast(pl.Int32)
-                .sub(1)
-                .alias("user_id")
-        )
-    )
-
-    df = df.with_columns(
-        pl.col("user_id")
-            .rank(method="dense")
-            .cast(pl.Int32)
-            .sub(1)
-            .alias("user_id")
+        # (
+        #     pl.col("user_id")
+        #         .rank(method="dense")
+        #         .cast(pl.Int32)
+        #         .sub(1)
+        #         .alias("user_id")
+        # )
     )
 
     df = df.with_columns()
@@ -60,5 +49,5 @@ def timer_dec(function):
     return enhanced_function
 
 if __name__ == "__main__":
-    # _create_parquet()
-    _edit_uid()
+    _create_parquet()
+    # _edit_uid()
