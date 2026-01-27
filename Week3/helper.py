@@ -42,7 +42,8 @@ def timer_dec(function):
         start = time.perf_counter_ns()
         function(*args, *kwargs)
         end = time.perf_counter_ns()
-        print("Execution time:", (end-start) / 1e6, "ms")
+        print("### Runtime")
+        print((end-start) / 1e6, "ms")
 
     return enhanced_function
 
