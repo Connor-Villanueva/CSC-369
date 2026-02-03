@@ -1,4 +1,5 @@
 import polars as pl
+import duckdb
 import time
 
 CSV_FILE_PATH = "./2022_place_canvas_history.csv"
@@ -60,6 +61,19 @@ def _edit_coordinates():
     df.write_parquet(PARQUET_FILE_PATH)
     print("Finished sinking Parquet\n")
 
+def _add_time_since_last_placed():
+    query = f"""
+        SELECT
+            *,
+            EPOCH(timestamp) - LAG(EPOCH(timestamp)) OVER (PARTITION BY user_id ORDER BY timestamp ASC) AS time_since_last_placed
+        FROM
+            '{PARQUET_FILE_PATH}'
+    """
+
+    df = duckdb.query(query).pl()
+
+    df.write_parquet(PARQUET_FILE_PATH)
+
 def timer_dec(function):
     def enhanced_function(*args, **kwargs):
         start = time.perf_counter_ns()
@@ -71,6 +85,7 @@ def timer_dec(function):
     return enhanced_function
 
 if __name__ == "__main__":
-    _create_parquet()
-    _edit_uid()
-    _edit_coordinates()
+    # _create_parquet()
+    # _edit_uid()
+    # _edit_coordinates()
+    _add_time_since_last_placed()
