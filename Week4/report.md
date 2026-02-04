@@ -52,3 +52,9 @@ An example of a single account bot is the following:
 ![gif](./bot_gifs/rplace_centered_998_1466.gif)
 
 In this case, the user is constantly placing a pixel in the same location at even time intervals which corresponds to their cooldown timer.
+
+Another example of potential bots can be seen in the following gif. This animation shows all user placements over the entire time period who had a suspiciously low standard deviation of `time_since_last_placed`.
+
+![gif](./bot_gifs/rplace_all_low_stdev.gif)
+
+We see that there are a lot of small blobs of pixels that appear. These blobs are continously placed on during the entire duration of event on even intervals, indicating bot behavior.

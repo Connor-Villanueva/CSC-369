@@ -3,6 +3,7 @@ import duckdb
 import time
 
 CSV_FILE_PATH = "./2022_place_canvas_history.csv"
+PARQUET_FILE_PATH_OLD = "./2022_place_canvas_history_uid.parquet"
 PARQUET_FILE_PATH = "./2022_place_canvas_history.parquet"
 
 def _create_parquet():
@@ -41,7 +42,7 @@ def _edit_uid():
 def _edit_coordinates():
     print("Splitting Coordinates...")
     print("Scanning Parquet...")
-    df = (pl.scan_parquet(PARQUET_FILE_PATH).with_columns(
+    df = (pl.scan_parquet(PARQUET_FILE_PATH_OLD).with_columns(
         pl.col("coordinate")
             .str.split(",")
             .alias("coords")
@@ -87,5 +88,5 @@ def timer_dec(function):
 if __name__ == "__main__":
     # _create_parquet()
     # _edit_uid()
-    # _edit_coordinates()
+    _edit_coordinates()
     _add_time_since_last_placed()
