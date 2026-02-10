@@ -91,3 +91,33 @@ Another indication that the logo was botted comes from the the final hours of r/
 <img src="./illustrations/osu_whiteout.gif"> 
 <br>r/osuplace Whiteout
 </div>
+
+
+### Honorable Mentions
+
+The first honorable mention is an extra piece of art work that was a collaboration between r/osuplace and [pxls.space](https://pxls.space/) (an r/place clone). Together, they made an illustration of a `hit circle` from osu!standard.
+
+<div align="center">
+<img src="./illustrations/hit_circle.png">
+</div>
+
+<br>
+
+---
+<br>
+
+The second honorable mention is another piece of art work done by r/osuplace. This artwork is of the creater of the game, Dean Herbert (AKA Peppy). He is also outlined by a `slider`.
+
+<div align="center">
+<img src="./illustrations/peppy.png">
+</div>
+
+<br>
+
+---
+<br>
+The last honorable mention is another tribute to the eternal 727 meme. At the start of the whiteout, the r/osuplace community wrote in white `WYSI 727` on the right side of the canvas. This is a reference to another player by the name of `Aireu` who performed a 727pp play on [Guess Who Is Back (TV Size)[Extreme]](https://youtu.be/AaAF51Gwbxo?si=-earyCS-PNnJMA_9&t=52) and said "727! When you see it!".
+
+<div align="center">
+<img src="./illustrations/wysi_727.gif">
+</div>
