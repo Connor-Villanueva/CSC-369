@@ -116,7 +116,9 @@ The second honorable mention is another piece of art work done by r/osuplace. Th
 
 ---
 <br>
-The last honorable mention is another tribute to the eternal 727 meme. At the start of the whiteout, the r/osuplace community wrote in white `WYSI 727` on the right side of the canvas. This is a reference to another player by the name of `Aireu` who performed a 727pp play on [Guess Who Is Back (TV Size)[Extreme]](https://youtu.be/AaAF51Gwbxo?si=-earyCS-PNnJMA_9&t=52) and said "727! When you see it!".
+The last honorable mention is another tribute to the eternal 727 meme. At the start of the whiteout, the r/osuplace community wrote in white `WYSI 727` on the right side of the canvas. This is a reference to another player by the name of `Aireu` who performed a 727pp play on 
+
+[Guess Who Is Back (TV Size)[Extreme]](https://youtu.be/AaAF51Gwbxo?si=sb-uaTQlKHpjzaxD&t=52) and said "727! When you see it!".
 
 <div align="center">
 <img src="./illustrations/wysi_727.gif">
