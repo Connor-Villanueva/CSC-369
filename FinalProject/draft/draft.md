@@ -24,7 +24,8 @@ Epstein was known to have a number of high-profile friends, some of which who wi
 
 # 3. Basic Email Statistics
 
-**Note for review:** The numbers in the following statistics are surprisingly low. I believe this is an issue with how I am parsing data. However, the results are similar to those found by others.
+<sub>***Note for reviewers: The numbers in the following statistics are surprisingly low. I believe this is an issue with how I am parsing data. However, the results are similar to those found by others.***
+</sub>
 
 To start, I want to show various basic email statistics.
 
@@ -55,4 +56,49 @@ Are you in NYC soon?
 HOUSE OVERSIGHT 032471 
 ```
 
-# 4. 
+# 4. Communication Frequency
+
+Next, I want to look at the frequency of communication with Epstein that a few of these top individuals had. I want to find out when their communication with Epstein began, and for approximately how long it continued on for.
+
+The following is a graph showing the number of emails sent by 3 individuals per year. These individuals are Kathy Ruemmler, Michael Wolff, and Richard Kahn, Thomas Landon, and Reid Weingarten.
+
+![img](./top_3_communcation_per_year.png)
+
+I chose to focus on these 5 people as they had the most emails correspondences with Epstein.
+
+Kathy Ruemmler, a top lawyer at Goldman Sachs, began her communication with Epstein in 2014. This communication lasted until 2019 following Epstein's death. Although she denied ever formally representing Epstein, many of these documents show that she advised him on media inquiries regarding his allegations.
+
+Richard Kahn was Epstein's former accountant. As such its no surprise that he appears so frequently in the files.
+
+Thomas Landon was a former journalist for *The New York Times*. Given the amount of emails exchanged between Landon and Epstein, it is safe to assume that these two had a close relationship. One such email exchange between the two shows Landon warning Epstein about another journalist, John Connolly.
+
+```
+Sent: 6/1/2016 3:47:12 PM 
+To: Landon Thomas 
+Subject: Re: The book on you... 
+Importance: High 
+every day 
+On Jun 1, 2016, at 11:46 AM, Thomas Jr., Landon 
+are you still getting calls from reporters re Trump? 
+wrote: 
+On Wed, Jun 1, 2016 at 11:28 AM, jeffrey E. <jeevacation@gmail.com> wrote: 
+no 
+On Wed, Jun 1, 2016 at 11:25 AM, Thomas Jr., Landon wrote: 
+Keep getting calls from that guy doing a book on you -- John Connolly. He seems very interested in 
+your relationship with the news media. I told him you were a hell of a guy:) One oddity: he said he 
+had been told that that quote from Trump about you in the original NY Mag story had been 
+manufactured. ie, that I did not actually speak to Donald. Which is bull shit of course. I am sure that 
+is what Trump told him as they have been getting a lot of questions from reporters about you. 
+He actually seemed to be a sensible guy/solid reporter -- just from the few conversations I had with 
+him. I think he is close to finishing up. 
+Did you ever speak to him? 
+```
+
+Lastly, Reid Weingarten was Epstein's personal lawyer. Again, this makes sense as to why so much communication appears between the two. Emails between Weingarten and Epstein often were about Trump or how to deal with the press.
+
+# 5. Connecting People
+
+<sub>*Note: This part isn't complete and will not be part of the draft. This ended up being more work than I anticipated. My goal for this is to create a graph with Epstein at the center and all connections (both direct and indirect where indirect connections are simply people that appear in the email bodies)*
+</sub>
+
+---
