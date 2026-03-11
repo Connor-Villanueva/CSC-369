@@ -189,6 +189,12 @@ HOUSE OVERSIGHT 032633
 
 One of my biggest goals for this analysis was to create a graph network that shows the connection between people in the Epstein files. While there is plenty of room for improvement in my results, there is still useful information from what I have.
 
+The following graphs were created by first connecting the sender and receivers of each email and assigning them an edge weight of 1. Every subsequent appearance of the same $(Sender, Receiver)$ pair, increased the edge weight by 1.
+
+Then, the body of each email was parsed for named entities. While I wish I could have used only named entites that were tagged as people, entities such as "Trump" were tagged as an organization. As such, all named entities are also added to the graph, connecting itself to the sender and receiver of it's respective email. To account for the aforementioned issue, they are given $\frac{1}{10}^{th}$ of the weight.
+
+Below are the resulting graphs.
+
 ### [Entire Email Network](./draft/email_network_entire.html)
 
 This first image shows the network in its entirety. Node distances correspond to infrequency. This means that the further away a node is, the less frequent of communication they had with others. As we can see, there are a lot of nodes around the edge of the network. These nodes mainly correspond to the following sets:
