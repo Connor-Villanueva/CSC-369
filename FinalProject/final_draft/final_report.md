@@ -87,6 +87,12 @@ Lastly, I wanted to look at the distribution of email body lengths. As expected,
 
 </center>
 
+With this distribution being approximately normal, this indicates that email body lengths follow a log-normal distribution. This means that email bodies are mostly on the shorter end, with few being very large.
+
+There does appear to be a second peak, leading to the possible interpretation of this distribution as being bimodal. This likely corresponds to emails that are short response to others.
+
+However, email body lengths from these text files are not entirely accurate. Many emails are filled with DOJ warnings, that vary in length and content. This leads to some email lengths being heavily padded in length.
+
 ## Michael Wolff
 
 Michael Wolff was among the top people for both sending emails to and receiving emails from Jeffrey Epstein, but who is this man?
