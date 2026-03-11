@@ -67,7 +67,7 @@ The first statistic I want to look at are the top 10 peoplee whom Epstein was em
 
 <center>
 
-![img](./draft/top_10_correspondants_recipients.png)
+![img](./top_10_correspondants_recipients.png)
 
 </center>
 
@@ -75,7 +75,7 @@ The second statistic is the top 10 people who were sending emails to Epstein.
 
 <center>
 
-![img](./draft/top_10_correspondants_senders.png)
+![img](./top_10_correspondants_senders.png)
 
 </center>
 
@@ -83,7 +83,7 @@ Lastly, I wanted to look at the distribution of email body lengths. As expected,
 
 <center>
 
-![img](./draft/distrubtion_log_body_length.png)
+![img](./distrubtion_log_body_length.png)
 
 </center>
 
@@ -193,7 +193,7 @@ Then, the body of each email was parsed for named entities. While I wish I could
 
 Below are the resulting graphs.
 
-### [Entire Email Network](./draft/email_network_entire.html)
+### [Entire Email Network](./email_network_entire.html)
 
 This first image shows the network in its entirety. Node distances correspond to infrequency. This means that the further away a node is, the less frequent of communication they had with others. As we can see, there are a lot of nodes around the edge of the network. These nodes mainly correspond to the following sets:
 
@@ -206,17 +206,17 @@ This first image shows the network in its entirety. Node distances correspond to
 
 <center>
 
-![img](./draft/whole_network.png)
+![img](./whole_network.png)
 
 </center>
 
-### [Largest Strongly Connected Component of Email Network](./draft/email_network_scc.html)
+### [Largest Strongly Connected Component of Email Network](./final_draft/email_network_scc.html)
 
 Now, only looking at the largest strongly connected component of the email network, we see that we hone in on the central area.
 
 <center>
 
-![img](./draft/scc_network.png)
+![img](./scc_network.png)
 
 </center>
 
