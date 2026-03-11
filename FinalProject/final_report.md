@@ -15,8 +15,6 @@ My data will be coming from a [dataset located on kaggle](https://www.kaggle.com
 
 # 2. Background
 
-For those unaware of the context for this situation, the following paragraphs will hopefully provide that.
-
 Jeffery Epstein was an American financier and sex offender. By the late 1980s, he has his own management firm which managed the assets of clients worth more than [$1 billion](https://en.wikipedia.org/wiki/Jeffrey_Epstein#:~:text=In%201988%2C%20while,%5B20%5D).
 
 In the late 1990s, he purchased his infamous island in the United States Virgin Islands. This island was the center for an alleged long-term sex trafficing ring for minors.
