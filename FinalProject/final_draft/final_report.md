@@ -216,7 +216,7 @@ This first image shows the network in its entirety. Node distances correspond to
 
 </center>
 
-### [Largest Strongly Connected Component of Email Network](./final_draft/email_network_scc.html)
+### [Largest Strongly Connected Component of Email Network](https://connor-villanueva.github.io/CSC-369/email_network_scc.html)
 
 Now, only looking at the largest strongly connected component of the email network, we see that we hone in on the central area.
 
